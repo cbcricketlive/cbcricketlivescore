@@ -80,7 +80,10 @@ Overs: <span id="overs">0.0</span>
 <button onclick="noBall()">No Ball</button>
 <button onclick="wicket()">Wicket</button>
 <button onclick="resetMatch()">Reset</button>
-
+<button onclick="runOut(0)">Run Out 0</button>
+<button onclick="runOut(1)">Run Out 1</button>
+<button onclick="runOut(2)">Run Out 2</button>
+<button onclick="runOut(3)">Run Out 3</button>
 <script>
 
 let runs = 0;
@@ -120,7 +123,14 @@ function wicket(){
     balls++;
     updateScore();
 }
+function runOut(runScored){
 
+    runs += runScored;
+    wickets++;
+    balls++;
+
+    updateScore();
+}
 function resetMatch(){
     runs = 0;
     wickets = 0;
