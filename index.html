@@ -90,7 +90,6 @@ Overs: <span id="overs">0.0</span>
 let runs = 0;
 let wickets = 0;
 let balls = 0;
-let history = [];
 
 function updateScore(){
     document.getElementById("score").innerHTML = runs + "/" + wickets;
@@ -102,66 +101,30 @@ function updateScore(){
 }
 
 function addRun(run){
-
-    history.push([runs, wickets, balls]);
-
     runs += run;
     balls++;
-
     updateScore();
 }
-
-function dotBall(){
-
-    history.push([runs, wickets, balls]);
-
-    balls++;
-
+function dotBall() {
+    balls = balls + 1;
     updateScore();
 }
 function wideBall(){
-
-    history.push([runs, wickets, balls]);
-
-    runs++;
-
+    runs += 1;
     updateScore();
 }
+
 function noBall(){
-
-    history.push([runs, wickets, balls]);
-
-    runs++;
-
+    runs += 1;
     updateScore();
 }
+
 function wicket(){
-
-    history.push([runs, wickets, balls]);
-
     wickets++;
     balls++;
-
     updateScore();
 }
-function undoLastBall(){
-
-    if(history.length > 0){
-
-        let last = history.pop();
-
-        runs = last[0];
-        wickets = last[1];
-        balls = last[2];
-
-        updateScore();
-    }
-}
-}
-
 function runOut(runScored){
-
-    history.push([runs, wickets, balls]);
 
     runs += runScored;
     wickets++;
