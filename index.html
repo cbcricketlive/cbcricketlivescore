@@ -100,15 +100,33 @@ function updateScore(){
     document.getElementById("overs").innerHTML = over + "." + ball;
 }
 
-function addRun(run){
+function addRun(run) {
+
+    history.push({
+        runs: runs,
+        wickets: wickets,
+        balls: balls
+    });
+
     runs += run;
     balls++;
+
     updateScore();
 }
+
 function dotBall() {
-    balls = balls + 1;
+
+    history.push({
+        runs: runs,
+        wickets: wickets,
+        balls: balls
+    });
+
+    balls++;
+
     updateScore();
 }
+
 function wideBall(){
     runs += 1;
     updateScore();
@@ -119,11 +137,34 @@ function noBall(){
     updateScore();
 }
 
-function wicket(){
+function wicket() {
+
+    history.push({
+        runs: runs,
+        wickets: wickets,
+        balls: balls
+    });
+
     wickets++;
     balls++;
+
     updateScore();
 }
+
+function undoLastBall() {
+
+    if(history.length > 0){
+
+        let last = history.pop();
+
+        runs = last.runs;
+        wickets = last.wickets;
+        balls = last.balls;
+
+        updateScore();
+    }
+}
+
 function runOut(runScored){
 
     runs += runScored;
