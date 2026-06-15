@@ -73,7 +73,7 @@ Overs: <span id="overs">0.0</span>
 <button onclick="addRun(1)">+1</button>
 <button onclick="addRun(2)">+2</button>
 <button onclick="addRun(3)">+3</button>
-<button onclick="dotBall()">No Run</button>
+<button onclick="dotBall()">0</button>
 <button onclick="addRun(4)">Four</button>
 <button onclick="addRun(6)">Six</button>
 <button onclick="wideBall()">Wide</button>
@@ -101,7 +101,10 @@ function addRun(run){
     balls++;
     updateScore();
 }
-
+function dotBall() {
+    balls = balls + 1;
+    updateScore();
+}
 function wideBall(){
     runs += 1;
     updateScore();
