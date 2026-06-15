@@ -94,9 +94,10 @@ function updateScore(){
     document.getElementById("overs").innerHTML = over + "." + ball;
 }
 
-function dotBall(){
-    balls++;
-    updateScore();
+function dotBall() {
+    balls++;           
+    updateLastBalls(0);
+    updateScore();     
 }
 function wideBall(){
     runs += 1;
