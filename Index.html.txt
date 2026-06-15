@@ -104,10 +104,8 @@ function wideBall(){
     runs += 1;
     updateScore();
 }
-function norun(){
-    runs += 0;
-    updateScore();
-}
+<button onclick="addRun(3)">+3</button>
+<button onclick="dotBall()">No Run</button>
 
 function noBall(){
     runs += 1;
