@@ -104,6 +104,10 @@ function wideBall(){
     runs += 1;
     updateScore();
 }
+function norun(){
+    runs += 0;
+    updateScore();
+}
 
 function noBall(){
     runs += 1;
